@@ -1,0 +1,276 @@
+:root {
+  font-size: 62.5%;
+  --lightgrey-color-base: #F9F4FB;
+  --pink-color-forTitle: #B52184;
+  --blue-color-forText: #312D64;
+}
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body, html, input, main {
+  font-family: 'Mulish', sans-serif;
+}
+
+
+body {
+  display: grid;
+  grid-template-rows: max-content;
+  height: 100vh;
+}
+
+
+
+header {
+  text-align: center;
+  background-color: var(--lightgrey-color-base);
+  padding-bottom: 9.3rem;
+}
+
+header h1, fieldset h1 {
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: var(--pink-color-forTitle);
+}
+
+header p {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--blue-color-forText);
+  margin-bottom: 3.5rem;
+}
+
+
+main {
+  background: linear-gradient(96deg, #343193 0%, #302C63 99.68%);
+  padding: 5rem 3.4rem;
+  display: flex;
+  flex-direction: column ;
+  gap: 5rem;
+}
+
+
+
+main .wrapper {
+  padding: 2.6rem;
+  border-radius: 2rem;
+  background-color: #fff;
+}
+
+.wrapper h1 {
+  font-size: 2.9rem;
+  font-weight: 900;
+  color: var(--pink-color-forTitle);
+
+  margin: 3rem 0 2rem;
+}
+
+.wrapper p {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--blue-color-forText);
+}
+
+/* Fazendo o formulario */
+fieldset {
+  border-style: none;
+  padding-left: 4rem;
+  background-color: var(--lightgrey-color-base);
+
+}
+
+fieldset h1 {
+  padding: 7.8rem 0 4.3rem;
+}
+
+.input-wrapper label {
+  position: absolute;
+  opacity: 0;
+  overflow: hidden; 
+  /* Propridade que esconde o label e deixa o que 
+  deve ser digitado dentro do input */
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--blue-color-forText);
+  font-family: 'Mulish', sans-serif;
+  font-size: 1.6rem;
+}
+
+
+.input-wrapper #name {
+  background-image: url(.//assets/person.svg);
+  background-repeat: no-repeat;
+
+  background-position: left 1.5rem top 50%;
+}
+
+.input-wrapper #email {
+  background-image: url(.//assets/at.svg);
+  background-repeat: no-repeat;
+
+  background-position: left 16px top 50%;
+}
+
+.input-wrapper input, textarea {
+  font-size: 1.6rem;
+  color: var(--blue-color-forText);
+  
+  border-radius: 1.6rem;
+  border: 1.5px solid #312D64;
+  padding: 1.4rem;
+  width: 40rem;
+
+  margin-bottom: 2.4rem;
+  
+  outline: 0;
+}
+
+.input-wrapper input {
+  padding: 1.4rem 5rem;
+}
+
+.input-wrapper img {
+  border: 1px solid red;
+  z-index: 1;
+}
+
+button {
+  padding: 1.6rem;
+  border-radius: 1.6rem;
+  background: linear-gradient(96deg, #343193 0%, #302C63 99.68%);
+  border-style: none;
+  outline: 0;
+
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+  color: white;
+  width: 20rem;
+  text-align: center;
+
+  margin-bottom: 7rem;
+}
+
+footer p {
+  color: #FFF;
+
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1.6rem;
+  background: linear-gradient(96deg, #343193 0%, #302C63 99.68%);
+
+}
+
+
+@media (min-width: 40em) {
+  
+  body {
+    display: grid;
+    grid-template-rows: max-content;
+
+  }
+
+  header {
+    background-color: var(--lightgrey-color-base);
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    
+    
+  }
+
+
+  .titles {
+    margin-left: 11rem;
+    position: relative;
+  }
+  .titles h1 {
+    font-size: 6rem;
+    margin-top: 50%;
+  }
+  .titles p {
+    font-size: 3.2rem;
+  }
+  .titles img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+
+  .astro img {
+    width: 70rem;
+  }
+ 
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;  
+
+    padding: 1.4rem 8rem;
+  }
+  main .wrapper {
+    width: 36.6rem;
+    height: 45rem;
+    margin: auto;
+  }
+
+  main .wrapper p {
+    font-size: 2rem;
+  }
+  main .wrapper h1 {
+    font-size: 3.5rem;
+  }
+
+  form fieldset {
+    padding-left: 11rem;
+
+    background-image: url(./assets/image11976.svg);
+    background-repeat: no-repeat;
+    background-position: bottom right; 
+  }
+
+
+
+}
+
+
+header .astro:hover {
+  filter: hue-rotate(7deg) contrast(101%) saturate(140%);
+  transition: 400ms;
+}
+
+header .titles img {
+  animation: move 2s infinite alternate both ease-in-out;
+}
+
+header .titles img:hover {
+  animation-play-state: paused;
+}
+
+main .wrapper img {
+  animation: around 5s alternate infinite both ease-in-out;
+  
+}
+
+@keyframes move {
+  100% {
+    transform: translateX(50vw);
+  }
+}
+
+@keyframes around {
+  100% {
+    transform: translateX(15vw) rotate(360deg);
+  }
+}
+
+
